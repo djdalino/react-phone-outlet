@@ -13,6 +13,7 @@ class Footer extends Component {
           <a
             className="link white-60 bg-transparent hover-white inline-flex items-center ma2 tc br2 pa2"
             href="https://facebook.com"
+            rel="noopener noreferrer"
             target="_blank"
             title="Facebook"
           >
@@ -36,6 +37,7 @@ class Footer extends Component {
           <a
             className="link white-60 bg-transparent hover-white inline-flex items-center ma2 tc br2 pa2"
             href="https://github.com/djdalino"
+            rel="noopener noreferrer"
             target="_blank"
             title="GitHub"
           >
@@ -56,6 +58,7 @@ class Footer extends Component {
           <a
             className="link white-60 bg-transparent hover-white inline-flex items-center ma2 tc br2 pa2"
             href="https://instagram.com"
+            rel="noopener noreferrer"
             title="Instagram"
             target="_blank"
           >
@@ -76,6 +79,7 @@ class Footer extends Component {
           <a
             className="link white-60 bg-transparent hover-white inline-flex items-center ma2 tc br2 pa2"
             href="https://www.youtube.com/channel/UCvo1PT0bjEKcqVBuljHWJaA?view_as=subscriber"
+            rel="noopener noreferrer"
             target="_blank"
             title="youtube"
           >
@@ -97,6 +101,7 @@ class Footer extends Component {
           <a
             className="link white-60 bg-transparent hover-white inline-flex items-center ma2 tc br2 pa2"
             href="https://www.linkedin.com/in/darren-james-dalino-767bb2183/"
+            rel="noopener noreferrer"
             title="LinkedIn"
             target="_blank"
           >
@@ -120,6 +125,7 @@ class Footer extends Component {
           <a
             className="link white-60 bg-transparent hover-white inline-flex items-center ma2 tc br2 pa2"
             href="https://twitter.com/"
+            rel="noopener noreferrer"
             title="Twitter"
             target="_blank"
           >
