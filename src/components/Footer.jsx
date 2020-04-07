@@ -13,6 +13,7 @@ class Footer extends Component {
           <a
             className="link white-60 bg-transparent hover-white inline-flex items-center ma2 tc br2 pa2"
             href="https://facebook.com"
+            target="_blank"
             title="Facebook"
           >
             <svg
@@ -54,8 +55,9 @@ class Footer extends Component {
           </a>
           <a
             className="link white-60 bg-transparent hover-white inline-flex items-center ma2 tc br2 pa2"
-            href="https://instagram.com/mrmrs_"
+            href="https://instagram.com"
             title="Instagram"
+            target="_blank"
           >
             <svg
               className="dib h2 w2"
@@ -73,7 +75,8 @@ class Footer extends Component {
           </a>
           <a
             className="link white-60 bg-transparent hover-white inline-flex items-center ma2 tc br2 pa2"
-            href="https://youtube.com"
+            href="https://www.youtube.com/channel/UCvo1PT0bjEKcqVBuljHWJaA?view_as=subscriber"
+            target="_blank"
             title="youtube"
           >
             <svg
@@ -93,8 +96,9 @@ class Footer extends Component {
 
           <a
             className="link white-60 bg-transparent hover-white inline-flex items-center ma2 tc br2 pa2"
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/darren-james-dalino-767bb2183/"
             title="LinkedIn"
+            target="_blank"
           >
             <svg
               className="dib h2 w2"
@@ -115,8 +119,9 @@ class Footer extends Component {
           </a>
           <a
             className="link white-60 bg-transparent hover-white inline-flex items-center ma2 tc br2 pa2"
-            href="https://twitter.com/mrmrs_"
+            href="https://twitter.com/"
             title="Twitter"
+            target="_blank"
           >
             <svg
               className="dib h2 w2"
