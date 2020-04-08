@@ -5,39 +5,43 @@ class Banner extends Component {
     return (
       <React.Fragment>
         <div
-          id="carouselExampleControls"
+          id="carouselExampleInterval"
           className="carousel slide"
           data-ride="carousel"
         >
           <div className="carousel-inner">
-            <div className="carousel-item active">
+            <div className="carousel-item active" data-interval="5000">
               <img
-                src="https://img.xda-cdn.com/QUPkc2VSAtMwjI9zt_CPMkOq-jg=/https%3A%2F%2Fmedia.flixfacts.com%2Finpage%2Fgoogle%2FPixel2%2Fimg%2FHero-Banner.jpg"
-                className="d-block w-100 img-fluid"
+                src="https://i.pinimg.com/originals/c2/33/40/c233409e4e3b58fb9aee87b5d20b50fa.jpg"
+                className="d-block w-100"
                 alt="..."
-                style={{ maxHeight: "55rem", minHeight: "20rem" }}
               />
             </div>
-            <div className="carousel-item">
+            <div className="carousel-item" data-interval="5000">
               <img
-                src="https://news-cdn.softpedia.com/images/news2/Apple-Launches-the-New-iPhone-5-2.png"
-                className="d-block w-100 img-fluid"
+                src="https://i.pinimg.com/originals/6b/c0/d8/6bc0d813bf117a46e0060a39e5e88895.jpg"
+                className="d-block w-100"
                 alt="..."
-                style={{ maxHeight: "55rem", minHeight: "20rem" }}
               />
             </div>
-            <div className="carousel-item">
+            <div className="carousel-item" data-interval="5000">
               <img
-                src="https://www.abenson.com/media/wysiwyg/pages/Galaxy_A50_Pre-OrderLanding_Page_Final-a.jpg"
-                className="d-block w-100 img-fluid"
+                src="https://www.itl.cat/pngfile/big/242-2425822_iphone-banner-pic-hd.jpg"
+                className="d-block w-100"
                 alt="..."
-                style={{ maxHeight: "55rem", minHeight: "20rem" }}
+              />
+            </div>
+            <div className="carousel-item" data-interval="5000">
+              <img
+                src="https://unlock4less.com/images/gallery/background/CenterBanner1.jpg"
+                className="d-block w-100"
+                alt="..."
               />
             </div>
           </div>
           <a
             className="carousel-control-prev"
-            href="#carouselExampleControls"
+            href="#carouselExampleInterval"
             role="button"
             data-slide="prev"
           >
@@ -49,7 +53,7 @@ class Banner extends Component {
           </a>
           <a
             className="carousel-control-next"
-            href="#carouselExampleControls"
+            href="#carouselExampleInterval"
             role="button"
             data-slide="next"
           >
