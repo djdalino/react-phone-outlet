@@ -1,4 +1,12 @@
 :root {
+  --mainGray: #c0c0c0;
+  --bloodOrange: #d1001c;
+  --lightOrange: #ffd7b5;
+  --mainGreen: #2c493f;
+  --mainOrange: #f6653c;
+  --mainViolet: #cf5fd7;
+  --secondBlue: #005aff;
+  --thirdBlue: #1974d2;
   --mainBlue: #2a2a72;
   --lightBlue: #009ffd;
   --mainWhite: #f3f3f3;
@@ -31,6 +39,9 @@ body {
 }
 .bg-darkblue {
   background: var(--mainBlue);
+}
+.text-dark {
+  color: var(--mainDark) !important;
 }
 
 .btn-black {
@@ -144,7 +155,7 @@ body {
 }
 
 .bg-black-80 {
-  background-color: rgba(42, 42, 114, 0.5);
+  background-color: var(--bloodOrange);
 }
 
 .bg-black {

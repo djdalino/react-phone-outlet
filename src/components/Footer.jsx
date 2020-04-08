@@ -4,9 +4,9 @@ class Footer extends Component {
   render() {
     return (
       <footer
-        style={{
-          backgroundImage: `url(https://media.giphy.com/media/hMyn7PchAvgS4/source.gif)`,
-        }}
+        // style={{
+        //   backgroundImage: `url(https://media.giphy.com/media/hMyn7PchAvgS4/source.gif)`,
+        // }}
         className="tc-l bg-center cover bg-black mt-5"
       >
         <div className="w-100 ph3 pv5 bg-black-80">
