@@ -27,7 +27,7 @@ body {
 }
 
 .text-title {
-  font-family: "Permanent Marker", cursive;
+  font-family: "Oswald", san-serif !important;
   letter-spacing: 0.3rem;
   text-transform: uppercase;
 }
@@ -151,7 +151,7 @@ body {
 }
 
 .white-60 {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .bg-black-80 {
