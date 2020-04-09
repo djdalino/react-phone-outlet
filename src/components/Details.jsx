@@ -6,7 +6,7 @@ class Details extends Component {
   render() {
     return (
       <ProductConsumer>
-        {value => {
+        {(value) => {
           const {
             id,
             company,
@@ -14,7 +14,8 @@ class Details extends Component {
             info,
             price,
             title,
-            inCart
+            inCart,
+            inWishList,
           } = value.detailProduct;
           return (
             <div className="container py-5">
@@ -48,6 +49,16 @@ class Details extends Component {
                     </Link>
                     <ButtonContainer
                       cart
+                      disabled={inCart ? true : inWishList ? true : false}
+                      onClick={() => {
+                        value.addToWishList(id);
+                      }}
+                      className="ml-2"
+                    >
+                      {inWishList ? "in wish list" : "Add to wish list"}
+                    </ButtonContainer>
+                    <ButtonContainer
+                      cart
                       disabled={inCart ? true : false}
                       onClick={() => {
                         value.addToCart(id);
@@ -55,7 +66,7 @@ class Details extends Component {
                       }}
                       className="ml-2"
                     >
-                      {inCart ? "inCart" : "Add to cart"}
+                      {inCart ? "In cart" : "Add to cart"}
                     </ButtonContainer>
                   </div>
                 </div>
