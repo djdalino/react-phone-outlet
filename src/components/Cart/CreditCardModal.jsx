@@ -85,7 +85,7 @@ export default class CreditCardModal extends React.Component {
                       </div>
                       <button
                         type="submit"
-                        className="btn btn-primary mt-3 mr-2"
+                        className="btn btn-primary btn-darkblue mt-3 mr-2"
                       >
                         Submit
                       </button>

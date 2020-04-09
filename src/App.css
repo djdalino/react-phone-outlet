@@ -46,6 +46,11 @@ body {
 .mt-10 {
   margin-top: 5rem !important;
 }
+.btn-darkblue {
+  background: var(--mainBlue) !important;
+  color: var(--mainWhite) !important;
+  border-color: var(--mainBlue) !important;
+}
 .btn-black {
   background: transparent;
   text-transform: capitalize;
@@ -75,12 +80,12 @@ body {
 .payment-icon {
   cursor: pointer;
   font-size: 1.2rem;
-  color: var(--lightBlue) !important;
-  border: 0.1rem solid var(--lightBlue) !important;
+  color: var(--mainBlue) !important;
+  border: 0.1rem solid var(--mainBlue) !important;
 }
 .payment-icon:hover {
-  color: var(--mainBlue) !important;
-  background: var(--lightBlue) !important;
+  color: var(--mainWhite) !important;
+  background: var(--mainBlue) !important;
   transition: all 0.5s ease-in-out;
 }
 @media (prefers-reduced-motion: no-preference) {
