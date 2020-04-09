@@ -6,7 +6,7 @@ class Banner extends Component {
       <React.Fragment>
         <div
           id="carouselExampleInterval"
-          className="carousel slide"
+          className="carousel slide mt-10"
           data-ride="carousel"
         >
           <div className="carousel-inner">

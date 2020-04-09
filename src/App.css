@@ -43,7 +43,9 @@ body {
 .text-dark {
   color: var(--mainDark) !important;
 }
-
+.mt-10 {
+  margin-top: 5rem !important;
+}
 .btn-black {
   background: transparent;
   text-transform: capitalize;

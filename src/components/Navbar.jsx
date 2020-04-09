@@ -5,9 +5,33 @@ import logo from "../mobile.png";
 import { ProductConsumer } from "./functional/context";
 import { MyCartButton, NavWrapper } from "./StyledComponent";
 class Navbar extends Component {
+  state = {
+    navbar: "",
+  };
+  componentDidMount() {
+    this.changeNavBar();
+  }
+  changeNavBar = () => {
+    window.addEventListener("scroll", () => {
+      let windowHeight = window.scrollY;
+      if (windowHeight > 50) {
+        this.setState(() => {
+          return { navbar: true };
+        });
+      } else {
+        this.setState(() => {
+          return { navbar: false };
+        });
+      }
+    });
+  };
   render() {
+    const { navbar } = this.state;
     return (
-      <NavWrapper className="navbar navbar-expand-md navbar-expand-sm navbar-light px-sm-5">
+      <NavWrapper
+        navbar={navbar}
+        className={`navbar fixed-top navbar-expand-md navbar-expand-sm navbar-transparent px-sm-5`}
+      >
         <div className="container">
           {/*https://www.iconfinder.com/icons/1243689/call_phone_icon Creative
         Commons (Attribution 3.0 Unported);
@@ -34,7 +58,11 @@ class Navbar extends Component {
                 return (
                   <React.Fragment>
                     <Link to="/cart">
-                      <MyCartButton data-toggle="tooltip" title="Cart!">
+                      <MyCartButton
+                        navbar={navbar}
+                        data-toggle="tooltip"
+                        title="Cart!"
+                      >
                         <span className="mr-2">
                           <i className="fas fa-cart-plus"></i>
                         </span>
@@ -42,7 +70,11 @@ class Navbar extends Component {
                       </MyCartButton>
                     </Link>
                     <Link to="/wish" className="ml-auto">
-                      <MyCartButton data-toggle="tooltip" title="Wish list!">
+                      <MyCartButton
+                        navbar={navbar}
+                        data-toggle="tooltip"
+                        title="Wish list!"
+                      >
                         <span className="mr-2">
                           <i className="fas fa-heart"></i>
                         </span>

@@ -13,11 +13,11 @@ class Wish extends Component {
             const { wishList } = value;
             if (wishList.length > 0) {
               return (
-                <React.Fragment>
+                <div className="mt-10">
                   <Title name="Your" title="Wish List" />
                   <WishColumns />
                   <WishList value={value} />
-                </React.Fragment>
+                </div>
               );
             } else {
               return <WishListEmpty />;
