@@ -26,7 +26,7 @@ export const MyCartButton = styled.button`
   font-size: 1.4rem;
   background: transparent;
   border: none;
-  color: ${(props) => (props.navbar ? "var(--mainWhite)" : "var(--mainBlue)")};
+  color: ${(props) => (props.navbar ? "var(--mainWhite)" : "var(--mainWhite)")};
   border-radius: 0.5rem;
   cursor: pointer;
   transition: all 1s ease-in-out;
@@ -41,13 +41,13 @@ export const MyCartButton = styled.button`
 export const NavWrapper = styled.nav`
   .nav-link {
     color: ${(props) =>
-      props.navbar ? "var(--mainWhite)" : "var(--mainBlue)"};
+      props.navbar ? "var(--mainWhite)" : "var(--mainWhite)"};
     font-size: 1.3rem;
     transition: all 1s ease-in-out;
   }
 
   background: ${(props) =>
-    props.navbar ? "var(--bloodOrange)" : "transparent"};
+    props.navbar ? "var(--mainBlue)" : "var(--bloodOrange)"};
   transition: all 1s ease-in-out;
   color: ${(props) =>
     props.navbar
@@ -68,4 +68,14 @@ export const ModalContainer = styled.div`
   #modal {
     background: var(--mainWhite);
   }
+`;
+
+export const FooterWrapper = styled.div`
+  background: ${(props) =>
+    props.navbar ? "var(--mainBlue)" : "var(--bloodOrange)"};
+  transition: all 1s ease-in-out;
+  color: ${(props) =>
+    props.navbar
+      ? "var(--mainWhite) !important"
+      : "var(--mainWhite) !important"};
 `;

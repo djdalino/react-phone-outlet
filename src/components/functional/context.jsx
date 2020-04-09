@@ -19,10 +19,29 @@ class ProductProvider extends Component {
     focus: "",
     name: "",
     number: "",
+    navbar: false,
   };
   componentDidMount() {
     this.setProducts();
+    this.changeNavBar();
   }
+  //navbar
+  changeNavBar = () => {
+    window.addEventListener("scroll", () => {
+      let windowHeight = window.scrollY;
+      if (windowHeight > 50) {
+        this.setState(() => {
+          return { navbar: true };
+        });
+      } else {
+        this.setState(() => {
+          return { navbar: false };
+        });
+      }
+    });
+  };
+
+  //store pruduct
   setProducts = () => {
     let tempProducts = [];
 

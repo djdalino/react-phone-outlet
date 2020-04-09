@@ -163,10 +163,6 @@ body {
   color: rgba(255, 255, 255, 0.8);
 }
 
-.bg-black-80 {
-  background-color: var(--bloodOrange);
-}
-
 .bg-black {
   background-color: rgba(0, 0, 0);
 }
