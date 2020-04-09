@@ -25,15 +25,13 @@ export const MyCartButton = styled.button`
   text-transform: capitalize;
   font-size: 1.4rem;
   background: transparent;
-  border: 0.1rem solid var(--mainWhite);
-  border-color: var(--mainWhite);
+  border: none;
   color: var(--mainWhite);
   border-radius: 0.5rem;
   cursor: pointer;
-  transition: all 0.5s ease-in-out;
+  transition: all 1s ease-in-out;
   &:hover {
-    background: var(--mainWhite);
-    color: var(--mainDark);
+    font-size: 1.6rem;
   }
   &:focus {
     outline: none;

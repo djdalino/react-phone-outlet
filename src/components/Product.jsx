@@ -5,12 +5,12 @@ import { ProductConsumer } from "./functional/context";
 import PropTypes from "prop-types";
 class Product extends Component {
   render() {
-    const { id, title, img, price, inCart } = this.props.product;
+    const { id, title, img, price, inCart, inWishList } = this.props.product;
     return (
       <ProductWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
         <div className="card">
           <ProductConsumer>
-            {value => (
+            {(value) => (
               <div
                 className="img-container p-5"
                 onClick={() => value.handleDetail(id)}
@@ -19,7 +19,28 @@ class Product extends Component {
                   <img src={img} alt="product" className="card-img-top" />
                 </Link>
                 <button
+                  className="wishList-btn"
+                  data-toggle="tooltip"
+                  title="Add to Wish list!"
+                  disabled={inCart ? true : inWishList ? true : false}
+                  onClick={() => {
+                    value.addToWishList(id);
+                  }}
+                >
+                  {inCart ? (
+                    <i className="fas fa-heart" />
+                  ) : inWishList ? (
+                    <p className="text-capitalize mb-0" disabled>
+                      in Wish List
+                    </p>
+                  ) : (
+                    <i className="fas fa-heart" />
+                  )}
+                </button>
+                <button
                   className="cart-btn"
+                  data-toggle="tooltip"
+                  title="Add to Wish list!"
                   disabled={inCart ? true : false}
                   onClick={() => {
                     value.addToCart(id);
@@ -59,8 +80,8 @@ Product.propTypes = {
     img: PropTypes.string,
     title: PropTypes.string,
     price: PropTypes.number,
-    inCart: PropTypes.bool
-  }).isRequired
+    inCart: PropTypes.bool,
+  }).isRequired,
 };
 
 const ProductWrapper = styled.div`
@@ -109,6 +130,26 @@ const ProductWrapper = styled.div`
     transform: translate(0, 0);
   }
   .cart-btn:hover{
+    color:var(--mainBlue);
+    cursor: pointer;
+  }
+  .wishList-btn {
+    position: absolute;
+    bottom:0;
+    left: 0;
+    padding 0.2rem 0.4rem;
+    background: var(--lightBlue);
+    border:none;
+    color:var(--mainWhite);
+    font-size: 1.4rem
+    border-radius 0.5 0 0 0 ;
+    transform: translate(-100%, 100%);
+    transition: all 0.5s linear;
+  }
+  .img-container:hover .wishList-btn{
+    transform: translate(0, 0);
+  }
+  .wishList-btn:hover{
     color:var(--mainBlue);
     cursor: pointer;
   }

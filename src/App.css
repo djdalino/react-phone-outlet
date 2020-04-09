@@ -63,6 +63,11 @@ body {
   font-size: 1.2rem;
   color: var(--bloodOrange);
 }
+.wish-icon {
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--mainBlue) !important;
+}
 .payment-icon {
   cursor: pointer;
   font-size: 1.2rem;

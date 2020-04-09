@@ -7,6 +7,7 @@ class ProductProvider extends Component {
     products: [],
     detailProduct: detailProduct,
     cart: [],
+    wishList: [],
     openModal: false,
     ccOpenModal: false,
     modalProduct: detailProduct,
@@ -24,6 +25,7 @@ class ProductProvider extends Component {
   }
   setProducts = () => {
     let tempProducts = [];
+
     storeProducts.forEach((item) => {
       const singleItem = { ...item };
       tempProducts = [...tempProducts, singleItem];
@@ -43,6 +45,8 @@ class ProductProvider extends Component {
       return { detailProduct: product };
     });
   };
+
+  //Add to cart
   addToCart = (id) => {
     let tempProducts = [...this.state.products];
     const index = tempProducts.indexOf(this.getItem(id));
@@ -57,8 +61,41 @@ class ProductProvider extends Component {
       },
       () => {
         this.addTotals();
+        this.handleRemoveToWishList(id);
       }
     );
+  };
+
+  //Add to wish list
+  addToWishList = (id) => {
+    let tempProducts = [...this.state.products];
+    const index = tempProducts.indexOf(this.getItem(id));
+    const product = tempProducts[index];
+
+    product.inWishList = true;
+
+    this.setState(() => {
+      return {
+        products: tempProducts,
+        wishList: [...this.state.wishList, product],
+      };
+    });
+  };
+
+  handleRemoveToWishList = (id) => {
+    let tempProducts = [...this.state.products];
+    let tempWish = [...this.state.wishList];
+    tempWish = tempWish.filter((item) => item.id !== id);
+    const index = tempProducts.indexOf(this.getItem(id));
+    let removedProduct = tempProducts[index];
+    removedProduct.inWishList = false;
+
+    this.setState(() => {
+      return {
+        wishList: [...tempWish],
+        products: [...tempProducts],
+      };
+    });
   };
 
   //Modal
@@ -207,6 +244,8 @@ class ProductProvider extends Component {
           inputChange: this.handleInputChange,
           ccOpenModal: this.ccModalOpen,
           ccModalClose: this.ccModalClose,
+          addToWishList: this.addToWishList,
+          handleRemoveToWishList: this.handleRemoveToWishList,
         }}
       >
         {this.props.children}

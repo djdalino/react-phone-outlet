@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import ProductList from "./components/ProductList";
 import Details from "./components/Details";
 import Cart from "./components/Cart/Cart";
+import Wish from "./components/WishList/Wish";
 import Default from "./components/Default";
 import Modal from "./components/Modal";
 import CreditCardModal from "./components/Cart/CreditCardModal";
@@ -20,6 +21,7 @@ class App extends Component {
           <Route exact path="/" component={ProductList} />
           <Route path="/details" component={Details} />
           <Route path="/cart" component={Cart} />
+          <Route path="/wish" component={Wish} />
           <Route component={Default} />
         </Switch>
         <Modal />

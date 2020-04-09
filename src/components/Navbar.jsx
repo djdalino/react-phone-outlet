@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import logo from "../mobile.png";
 //import styled from "styled-components";
+import { ProductConsumer } from "./functional/context";
 import { MyCartButton, NavWrapper } from "./StyledComponent";
 class Navbar extends Component {
   render() {
@@ -26,14 +27,37 @@ class Navbar extends Component {
               </Link>
             </li>
           </ul>
-          <Link to="/cart" className="ml-auto">
-            <MyCartButton>
-              <span className="mr-2">
-                <i className="fas fa-cart-plus"></i>
-              </span>
-              my cart
-            </MyCartButton>
-          </Link>
+          <div className="ml-auto">
+            <ProductConsumer>
+              {(value) => {
+                const { cart, wishList } = value;
+                return (
+                  <React.Fragment>
+                    <Link to="/cart">
+                      <MyCartButton data-toggle="tooltip" title="Cart!">
+                        <span className="mr-2">
+                          <i className="fas fa-cart-plus"></i>
+                        </span>
+                        ({cart.length})
+                      </MyCartButton>
+                    </Link>
+                    <Link to="/wish" className="ml-auto">
+                      <MyCartButton
+                        data-toggle="tooltip"
+                        title="Wish list
+                      !"
+                      >
+                        <span className="mr-2">
+                          <i className="fas fa-heart"></i>
+                        </span>
+                        ({wishList.length})
+                      </MyCartButton>
+                    </Link>
+                  </React.Fragment>
+                );
+              }}
+            </ProductConsumer>
+          </div>
         </div>
       </NavWrapper>
     );
