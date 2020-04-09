@@ -18,21 +18,31 @@ function WishListItem({ item, value }) {
         {title}
       </div>
       <div className="col-10 mx-auto col-lg-2">
-        <span className="d-lg-none text-capitalize">price: </span>
+        <span className="d-lg-none text-capitalize">company: </span>
         {company}
       </div>
       <div className="col-10 mx-auto col-lg-2">
-        <span className="d-lg-none text-capitalize">company: </span>
+        <span className="d-lg-none text-capitalize">price: </span>
         {price}
       </div>
 
       <div className="col-10 mx-auto col-lg-2">
-        <div className="wish-icon" onClick={() => addToCart(id)}>
+        <div
+          className="wish-icon"
+          data-toggle="tooltip"
+          title="Add to cart"
+          onClick={() => addToCart(id)}
+        >
           <i className="fas fa-cart-plus"></i>
         </div>
       </div>
       <div className="col-10 mx-auto col-lg-2">
-        <div className="cart-icon" onClick={() => handleRemoveToWishList(id)}>
+        <div
+          className="cart-icon"
+          data-toggle="tooltip"
+          title="Remove to cart"
+          onClick={() => handleRemoveToWishList(id)}
+        >
           <i className="fas fa-trash"></i>
         </div>
       </div>

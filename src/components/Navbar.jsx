@@ -42,11 +42,7 @@ class Navbar extends Component {
                       </MyCartButton>
                     </Link>
                     <Link to="/wish" className="ml-auto">
-                      <MyCartButton
-                        data-toggle="tooltip"
-                        title="Wish list
-                      !"
-                      >
+                      <MyCartButton data-toggle="tooltip" title="Wish list!">
                         <span className="mr-2">
                           <i className="fas fa-heart"></i>
                         </span>
