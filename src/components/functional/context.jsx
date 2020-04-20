@@ -132,10 +132,11 @@ class ProductProvider extends Component {
         };
       },
       () => {
-        let items = [...JSON.parse(localStorage.getItem("wishList"))];
-        items = items.filter((item) => item.id !== id);
-        localStorage.setItem("wishList", JSON.stringify(items));
-        if (items.length === 0) {
+        if (this.state.wishList.length >= 1) {
+          let wishes = JSON.parse(localStorage.getItem("wishList"));
+          wishes = wishes.filter((wish) => wish.id !== id);
+          localStorage.setItem("wishList", JSON.stringify(wishes));
+        } else {
           localStorage.removeItem("wishList");
         }
       }
@@ -220,7 +221,7 @@ class ProductProvider extends Component {
         };
       },
       () => {
-        let items = [...JSON.parse(localStorage.getItem("cart"))];
+        let items = JSON.parse(localStorage.getItem("cart"));
         items = items.filter((item) => item.id !== id);
         localStorage.setItem("cart", JSON.stringify(items));
         if (items.length === 0) {
