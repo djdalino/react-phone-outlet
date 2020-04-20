@@ -5,9 +5,9 @@ const ProductContext = React.createContext();
 class ProductProvider extends Component {
   state = {
     products: [],
-    detailProduct: detailProduct,
-    cart: [],
-    wishList: [],
+    detailProduct: JSON.parse(localStorage.getItem("detailProduct")) || [],
+    cart: JSON.parse(localStorage.getItem("cart")) || [],
+    wishList: JSON.parse(localStorage.getItem("wishList")) || [],
     openModal: false,
     ccOpenModal: false,
     modalProduct: detailProduct,
@@ -41,7 +41,7 @@ class ProductProvider extends Component {
     });
   };
 
-  //store pruduct
+  //store product
   setProducts = () => {
     let tempProducts = [];
 
@@ -60,9 +60,17 @@ class ProductProvider extends Component {
   };
   handleDetail = (id) => {
     const product = this.getItem(id);
-    this.setState(() => {
-      return { detailProduct: product };
-    });
+    this.setState(
+      () => {
+        return { detailProduct: product };
+      },
+      () => {
+        localStorage.setItem(
+          "detailProduct",
+          JSON.stringify(this.state.detailProduct)
+        );
+      }
+    );
   };
 
   //Add to cart
@@ -79,6 +87,8 @@ class ProductProvider extends Component {
         return { products: tempProducts, cart: [...this.state.cart, product] };
       },
       () => {
+        localStorage.setItem("cart", JSON.stringify(this.state.cart));
+
         this.addTotals();
         this.handleRemoveToWishList(id);
       }
@@ -93,12 +103,17 @@ class ProductProvider extends Component {
 
     product.inWishList = true;
 
-    this.setState(() => {
-      return {
-        products: tempProducts,
-        wishList: [...this.state.wishList, product],
-      };
-    });
+    this.setState(
+      () => {
+        return {
+          products: tempProducts,
+          wishList: [...this.state.wishList, product],
+        };
+      },
+      () => {
+        localStorage.setItem("wishList", JSON.stringify(this.state.wishList));
+      }
+    );
   };
 
   handleRemoveToWishList = (id) => {
@@ -109,12 +124,22 @@ class ProductProvider extends Component {
     let removedProduct = tempProducts[index];
     removedProduct.inWishList = false;
 
-    this.setState(() => {
-      return {
-        wishList: [...tempWish],
-        products: [...tempProducts],
-      };
-    });
+    this.setState(
+      () => {
+        return {
+          wishList: [...tempWish],
+          products: [...tempProducts],
+        };
+      },
+      () => {
+        let items = [...JSON.parse(localStorage.getItem("wishList"))];
+        items = items.filter((item) => item.id !== id);
+        localStorage.setItem("wishList", JSON.stringify(items));
+        if (items.length === 0) {
+          localStorage.removeItem("wishList");
+        }
+      }
+    );
   };
 
   //Modal
@@ -195,6 +220,13 @@ class ProductProvider extends Component {
         };
       },
       () => {
+        let items = [...JSON.parse(localStorage.getItem("cart"))];
+        items = items.filter((item) => item.id !== id);
+        localStorage.setItem("cart", JSON.stringify(items));
+        if (items.length === 0) {
+          localStorage.removeItem("cart");
+        }
+
         this.addTotals();
       }
     );
@@ -205,6 +237,7 @@ class ProductProvider extends Component {
         return { cart: [] };
       },
       () => {
+        localStorage.removeItem("cart");
         this.setProducts();
         this.addTotals();
       }
