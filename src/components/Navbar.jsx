@@ -16,7 +16,7 @@ class Navbar extends Component {
                 navbar={navbar}
                 className={`navbar fixed-top navbar-expand-md navbar-expand-sm navbar-transparent px-sm-5`}
               >
-                <div className="container">
+                <div className="container d-flex">
                   {/*https://www.iconfinder.com/icons/1243689/call_phone_icon Creative
         Commons (Attribution 3.0 Unported);
       https://www.iconfinder.com/Makoto_msk */}
@@ -29,13 +29,13 @@ class Navbar extends Component {
                     />
                   </Link>
                   <ul className="navbar-nav align-items-center">
-                    <li className="nav-item ml-5">
+                    <li className="nav-item">
                       <Link to="/" className="nav-link ">
                         Products
                       </Link>
                     </li>
                   </ul>
-                  <div className="ml-auto">
+                  <div className="ml-auto d-flex">
                     <React.Fragment>
                       <Link to="/cart">
                         <MyCartButton

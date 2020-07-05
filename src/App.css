@@ -218,6 +218,20 @@ body {
   font-size: 0.875rem;
 }
 
+.d-flex {
+  display: flex !important;
+}
+.d-flex-items {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(118px, 1fr));
+  justify-items: center;
+}
+.w-1140 {
+  max-width: 1140px;
+  margin: auto;
+}
+
 @media screen and (min-width: 60em) {
   .tc-l {
     text-align: center;
